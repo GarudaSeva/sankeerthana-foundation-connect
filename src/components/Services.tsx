@@ -63,17 +63,15 @@ const Services = () => {
   ];
 
   return (
-    <section id="services" className="py-20 bg-background">
+        <div id="services" className="min-h-screen pb-4 scroll-mt-28">
+    <section className="py-12 bg-background">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16 animate-fade-in-up">
-          <span className="px-4 py-2 bg-secondary/10 text-secondary rounded-full text-sm font-semibold inline-block mb-4">
-            What We Do
-          </span>
-          <h2 className="text-3xl md:text-4xl font-bold text-navy mb-4">
+          <h2 className="text-3xl md:text-5xl font-bold text-navy mb-4">
             Our Services & Programs
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            We offer a comprehensive range of social services aimed at improving the lives of senior citizens, children, and underprivileged communities.
+            Making a real difference in communities through dedicated service
           </p>
         </div>
 
@@ -109,6 +107,7 @@ const Services = () => {
         </div>
       </div>
     </section>
+    </div>
   );
 };
 

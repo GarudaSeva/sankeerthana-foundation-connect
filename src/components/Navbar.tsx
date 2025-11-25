@@ -31,8 +31,8 @@ const Navbar = () => {
           <div className="flex items-center gap-3 cursor-pointer" onClick={() => scrollToSection("home")}>
             <img src={logo} alt="Sankeerthana Foundation" className="h-14 w-auto" />
             <div>
-              <h1 className="text-xl font-bold text-navy">Sankeerthana Foundation</h1>
-              <p className="text-xs text-muted-foreground">Reg: 470/2021</p>
+              <h1 className="text-2xl font-bold text-navy">Sankeerthana Foundation</h1>
+              {/* <p className="text-xs text-muted-foreground">Reg: 470/2021</p> */}
             </div>
           </div>
 

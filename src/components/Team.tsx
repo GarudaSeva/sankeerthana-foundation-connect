@@ -48,12 +48,10 @@ const Team = () => {
   ];
 
   return (
-    <section id="team" className="py-20 bg-muted/30">
+        <div id="team" className="min-h-screen pb-4 scroll-mt-28">
+    <section id="team" className="py-12 bg-muted/30">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16 animate-fade-in-up">
-          <span className="px-4 py-2 bg-secondary/10 text-secondary rounded-full text-sm font-semibold inline-block mb-4">
-            Our Leadership
-          </span>
+        <div className="text-center mb-4 animate-fade-in-up">
           <h2 className="text-3xl md:text-4xl font-bold text-navy mb-4">
             Meet Our Team
           </h2>
@@ -96,7 +94,7 @@ const Team = () => {
                     <User className="h-8 w-8 text-primary" />
                   </div>
                   <h4 className="text-lg font-semibold text-navy mb-1">{member.name}</h4>
-                  <p className="text-muted-foreground text-sm">{member.position}</p>
+                  <p className="text-secondary text-sm">{member.position}</p>
                 </CardContent>
               </Card>
             ))}
@@ -114,7 +112,7 @@ const Team = () => {
                     <User className="h-7 w-7 text-muted-foreground group-hover:text-secondary transition-colors" />
                   </div>
                   <h4 className="font-semibold text-navy mb-1">{member.name}</h4>
-                  <p className="text-muted-foreground text-sm">{member.position}</p>
+                  <p className="text-secondary text-sm">{member.position}</p>
                 </CardContent>
               </Card>
             ))}
@@ -139,6 +137,7 @@ const Team = () => {
         </div>
       </div>
     </section>
+    </div>
   );
 };
 

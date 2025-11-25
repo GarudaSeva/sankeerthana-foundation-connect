@@ -17,13 +17,31 @@ const Contact = () => {
   });
 
   const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    toast({
-      title: "Message Sent!",
-      description: "Thank you for reaching out. We'll get back to you soon.",
-    });
-    setFormData({ name: "", email: "", phone: "", message: "" });
-  };
+  e.preventDefault();
+
+  const whatsappNumber = "8106143737";
+  const whatsappMessage = 
+    `Name: ${formData.name}%0A` +
+    `Email: ${formData.email}%0A` +
+    `Phone: ${formData.phone || "N/A"}%0A` +
+    `Message: ${formData.message}`;
+
+  // WhatsApp deep link
+  const whatsappURL = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
+
+  // Open WhatsApp
+  window.open(whatsappURL, "_blank");
+
+  // Optional Toast
+  toast({
+    title: "Opening WhatsApp...",
+    description: "Your message will be sent through WhatsApp.",
+  });
+
+  // Reset form
+  setFormData({ name: "", email: "", phone: "", message: "" });
+};
+
 
   const contactInfo = [
     {
@@ -47,17 +65,16 @@ const Contact = () => {
   ];
 
   return (
-    <section id="contact" className="py-20 bg-background">
+            <div id="contact" className="min-h-screen pb-4 scroll-mt-28">
+
+    <section id="contact" className="py-8 bg-background">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16 animate-fade-in-up">
-          <span className="px-4 py-2 bg-secondary/10 text-secondary rounded-full text-sm font-semibold inline-block mb-4">
-            Get In Touch
-          </span>
           <h2 className="text-3xl md:text-4xl font-bold text-navy mb-4">
             Contact Us
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            Have questions or want to get involved? We'd love to hear from you. Reach out and let's work together to make a difference.
+            Reach out and let's work together to make a difference.
           </p>
         </div>
 
@@ -155,20 +172,7 @@ const Contact = () => {
               </Card>
             ))}
 
-            {/* Instagram QR Code */}
-            <Card className="border-border">
-              <CardContent className="p-6 text-center">
-                <h4 className="font-semibold text-navy mb-4">Scan to Follow on Instagram</h4>
-                <img 
-                  src={instagramQR} 
-                  alt="Instagram QR Code" 
-                  className="w-48 h-48 mx-auto rounded-lg"
-                />
-                <p className="text-sm text-muted-foreground mt-4">
-                  Stay updated with our latest activities and events
-                </p>
-              </CardContent>
-            </Card>
+          
 
             {/* Map */}
             <Card className="border-border overflow-hidden">
@@ -189,6 +193,7 @@ const Contact = () => {
         </div>
       </div>
     </section>
+    </div>
   );
 };
 

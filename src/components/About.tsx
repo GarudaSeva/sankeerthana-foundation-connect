@@ -1,109 +1,120 @@
-import { Card, CardContent } from "@/components/ui/card";
-import { Target, Heart, Users, BookOpen, Stethoscope, Building } from "lucide-react";
+import { CheckCircle, Heart, Users, Target, Award } from "lucide-react";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import volunteersImage from "@/assets/gallery/image9.jpeg";
 
 const About = () => {
   const objectives = [
-    {
-      icon: BookOpen,
-      title: "Educational Excellence",
-      description: "To provide and spread primary, secondary and higher education by establishing or collaborating with schools, colleges, institutions, libraries, and research in the education field."
-    },
-    {
-      icon: Stethoscope,
-      title: "Healthcare Initiatives",
-      description: "To work towards the healthy golden years of senior citizens and children by organizing health camps at various places to monitor and improve their wellbeing."
-    },
-    {
-      icon: Users,
-      title: "Vocational Training",
-      description: "To address educational needs by providing academic education, training and job-oriented vocational training to specific age groups, empowering them for better futures."
-    },
-    {
-      icon: Building,
-      title: "Intergenerational Synergy",
-      description: "To build a place that brings about synergies between senior citizens and children, fostering understanding and mutual support across generations."
-    },
-    {
-      icon: Heart,
-      title: "Dignity for Elderly",
-      description: "To organize outreach programs focused on providing dignity, care and security to the elderly through volunteer efforts and compassionate service."
-    },
-    {
-      icon: Target,
-      title: "Recreational Facilities",
-      description: "To provide club and recreational facilities to senior citizens so they can spend their time in a constructive, engaging and fulfilling manner."
-    }
+    "To provide and spread primary, secondary and higher education by establishing or collaborating with schools, colleges, institutions, libraries, and research in the education field.",
+    "To work towards the healthy golden years of senior citizens and children by organizing health camps at various places to monitor and improve their wellbeing.",
+    "To address educational needs by providing academic education, training and job-oriented vocational training to specific age groups, empowering them for better futures.",
+    "To build a place that brings about synergies between senior citizens and children, fostering understanding and mutual support across generations.",
+    "To organize outreach programs focused on providing dignity, care and security to the elderly through volunteer efforts and compassionate service.",
+    "To provide club and recreational facilities to senior citizens so they can spend their time in a constructive, engaging and fulfilling manner."
   ];
 
-  const certifications = [
-    "Certified non-profit organization with no commercial activities",
-    "All office bearers serve without payment from the association",
+  const declarations = [
+    "The association is formed with no profit motive and commercial activities involved in its working",
+    "The office bearers are not paid from the association",
+    "The association would not engage in agitational activities to ventilate grievances",
     "Non-political organization focused solely on social welfare",
     "Verified and genuine office bearer signatures on record"
   ];
 
   return (
-    <section id="about" className="py-20 bg-muted/30">
+    <div id="about" className="min-h-screen pb-4 scroll-mt-28">
+    <div className="min-h-screen  pb-4">
       <div className="container mx-auto px-4">
         {/* Header */}
-        <div className="text-center mb-16 animate-fade-in-up">
-          <span className="px-4 py-2 bg-secondary/10 text-secondary rounded-full text-sm font-semibold inline-block mb-4">
-            About Us
-          </span>
-          <h2 className="text-3xl md:text-4xl font-bold text-navy mb-4">
-            Our Mission & Vision
-          </h2>
-          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            Sankeerthana Foundation (Reg: 470/2021) is dedicated to creating a compassionate society where education, healthcare, and dignity are accessible to all, especially senior citizens and children.
+        <div className="text-center mb-16">
+          <h1 className="text-5xl font-bold text-primary mb-4 animate-fade-in">About Us</h1>
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            Learn about our mission to uplift communities through compassion and service
           </p>
         </div>
 
+        {/* Vision Section */}
+        <section className="mb-16">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div className="animate-slide-in-left">
+              <img 
+  src={volunteersImage} 
+  alt="Sankeerthana Foundation Team" 
+  className="rounded-2xl shadow-2xl w-full h-[320px] object-cover"
+/>
+
+            </div>
+           <div className="animate-slide-in-right">
+  <div className="flex items-center gap-2 mb-4">
+    <h2 className="text-3xl font-bold text-primary">Our Vision</h2>
+  </div>
+
+  <p className="text-lg text-foreground leading-relaxed mb-4">
+    Sankeerthana Foundation is a non-profit organization formed with the vision 
+    to uplift children, senior citizens, and underserved communities through 
+    education, health, care, dignity, and empowerment initiatives.
+  </p>
+
+  <p className="text-lg text-foreground leading-relaxed mb-4">
+    We believe in creating strong emotional and learning synergies between 
+    generations, fostering a society where everyone has access to education, 
+    healthcare, and the dignity they deserve.
+  </p>
+
+  <p className="text-lg text-foreground leading-relaxed mb-4">
+    Our mission is to bridge the gap between privilege and need by extending 
+    support, guidance, and resources to those who require them the most.
+  </p>
+</div>
+          </div>
+        </section>
+
         {/* Aims & Objectives */}
-        <div className="mb-16">
-          <h3 className="text-2xl font-bold text-navy mb-8 text-center">Our Aims & Objectives</h3>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {objectives.map((obj, index) => (
-              <Card key={index} className="group hover:shadow-elegant transition-all border-border hover:-translate-y-1">
-                <CardContent className="p-6">
-                  <div className="w-14 h-14 bg-secondary/10 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                    <obj.icon className="h-7 w-7 text-secondary" />
+        <section className="mb-16">
+          <div className="text-center mb-12">
+            <div className="flex items-center justify-center gap-2 mb-4">
+              <Target className="text-primary" size={36} />
+              <h2 className="text-4xl font-bold text-primary">Aims & Objectives</h2>
+            </div>
+          </div>
+          
+          <div className="grid md:grid-cols-2 gap-6">
+            {objectives.map((objective, index) => (
+              <Card key={index} className="card-hover border-l-4 border-l-primary">
+                <CardContent className="pt-6">
+                  <div className="flex gap-3">
+                    <CheckCircle className="text-hope flex-shrink-0 mt-1" size={24} />
+                    <p className="text-foreground leading-relaxed">{objective}</p>
                   </div>
-                  <h4 className="text-lg font-semibold text-navy mb-3">{obj.title}</h4>
-                  <p className="text-muted-foreground leading-relaxed">{obj.description}</p>
                 </CardContent>
               </Card>
             ))}
           </div>
-        </div>
+        </section>
 
-        {/* Certifications */}
-        <div className="bg-card rounded-2xl p-8 md:p-12 shadow-card border border-border">
-          <h3 className="text-2xl font-bold text-navy mb-6 text-center">Our Commitment to Transparency</h3>
-          <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-            {certifications.map((cert, index) => (
-              <div key={index} className="flex items-start gap-3">
-                <div className="w-6 h-6 bg-secondary/20 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                  <div className="w-3 h-3 bg-secondary rounded-full" />
-                </div>
-                <p className="text-foreground">{cert}</p>
+        {/* Declaration Section */}
+        <section className="mb-4">
+          <Card className="bg-primary/10 ">
+            <CardHeader>
+              <div className="flex items-center gap-2">
+                <Award className="text-primary" size={32} />
+                <CardTitle className="text-3xl">Non-Profit Declarations</CardTitle>
               </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Location */}
-        <div className="mt-12 text-center">
-          <div className="inline-block bg-cream rounded-xl p-6 border border-border">
-            <h4 className="font-semibold text-navy mb-2">Our Location</h4>
-            <p className="text-muted-foreground">
-              H.No 10-3-48/A/1, Kameswar Rao Colony<br />
-              Lingojiguda, Saroor Nagar<br />
-              Telangana - 500035
-            </p>
-          </div>
-        </div>
+            </CardHeader>
+            <CardContent>
+              <div className="grid md:grid-cols-2 gap-4">
+                {declarations.map((declaration, index) => (
+                  <div key={index} className="flex gap-3 items-start">
+                    <CheckCircle className="text-trust flex-shrink-0 mt-1" size={20} />
+                    <p className="text-foreground">{declaration}</p>
+                  </div>
+                ))}
+              </div>
+            </CardContent>
+          </Card>
+        </section>
       </div>
-    </section>
+    </div>
+    </div>
   );
 };
 

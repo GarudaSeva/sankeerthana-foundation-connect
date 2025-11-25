@@ -1,103 +1,94 @@
 import { useState } from "react";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { Card } from "@/components/ui/card";
+import image1 from "@/assets/gallery/image1.jpeg"
+import image2 from "@/assets/gallery/image2.jpeg"
+import image3 from "@/assets/gallery/image3.jpeg"
+import image4 from "@/assets/gallery/image4.jpeg"
+import image5 from "@/assets/gallery/image5.jpeg"
+import image6 from "@/assets/gallery/image6.jpeg"
+import image7 from "@/assets/gallery/image7.jpeg"
+import image8 from "@/assets/gallery/image8.jpeg"
+import image9 from "@/assets/gallery/image9.jpeg"
+import image10 from "@/assets/gallery/image10.jpeg"
+import image11 from "@/assets/gallery/image11.jpeg"
+import image12 from "@/assets/gallery/image12.jpeg"
 
+ 
 const Gallery = () => {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
   // Images from the parsed PDF
   const galleryImages = [
     {
-      src: "parsed-documents://20251125-101033-009959/NGO_3.pdf/images/img_p0_1.jpg",
+      src: image1,
       caption: "Blanket Distribution - Old Age Home",
       category: "Community Service"
     },
     {
-      src: "parsed-documents://20251125-101033-009959/NGO_3.pdf/images/img_p0_2.jpg",
+      src: image2,
       caption: "Supporting Senior Citizens",
       category: "Elder Care"
     },
     {
-      src: "parsed-documents://20251125-101033-009959/NGO_3.pdf/images/img_p0_3.jpg",
+      src: image3,
       caption: "Blanket Donation Drive",
       category: "Winter Relief"
     },
     {
-      src: "parsed-documents://20251125-101033-009959/NGO_3.pdf/images/img_p0_4.jpg",
+      src: image4,
       caption: "Community Outreach",
       category: "Community Service"
     },
     {
-      src: "parsed-documents://20251125-101033-009959/NGO_3.pdf/images/img_p0_5.jpg",
+      src: image5,
       caption: "Helping Hands in Action",
       category: "Volunteering"
     },
     {
-      src: "parsed-documents://20251125-101033-009959/NGO_3.pdf/images/img_p1_3.jpg",
+      src: image6,
       caption: "COVID Relief - Food Distribution",
       category: "Food Drive"
     },
     {
-      src: "parsed-documents://20251125-101033-009959/NGO_3.pdf/images/img_p1_4.jpg",
+      src: image7,
       caption: "Hospital Food Support",
       category: "Healthcare Support"
     },
     {
-      src: "parsed-documents://20251125-101033-009959/NGO_3.pdf/images/img_p1_5.jpg",
+      src: image8,
       caption: "Feeding the Needy",
       category: "Food Drive"
     },
     {
-      src: "parsed-documents://20251125-101033-009959/NGO_3.pdf/images/img_p1_6.jpg",
+      src: image9,
       caption: "Street Food Distribution",
       category: "Community Service"
     },
     {
-      src: "parsed-documents://20251125-101033-009959/NGO_3.pdf/images/img_p2_2.jpg",
+      src: image10,
       caption: "School Bags Distribution",
       category: "Education"
     },
     {
-      src: "parsed-documents://20251125-101033-009959/NGO_3.pdf/images/img_p2_4.jpg",
+      src: image11,
       caption: "Girls School Support",
       category: "Education"
     },
     {
-      src: "parsed-documents://20251125-101033-009959/NGO_3.pdf/images/img_p2_5.jpg",
+      src: image12,
       caption: "Educational Kit Distribution",
       category: "Education"
-    },
-    {
-      src: "parsed-documents://20251125-101033-009959/NGO_3.pdf/images/img_p2_6.jpg",
-      caption: "Exam Pads & Supplies",
-      category: "Education"
-    },
-    {
-      src: "parsed-documents://20251125-101033-009959/NGO_3.pdf/images/img_p2_7.jpg",
-      caption: "Orphanage Support",
-      category: "Child Welfare"
-    },
-    {
-      src: "parsed-documents://20251125-101033-009959/NGO_3.pdf/images/img_p3_1.jpg",
-      caption: "School Supplies Program",
-      category: "Education"
-    },
-    {
-      src: "parsed-documents://20251125-101033-009959/NGO_3.pdf/images/img_p3_3.jpg",
-      caption: "Community Gathering",
-      category: "Community Service"
     }
   ];
 
   return (
     <>
-      <section id="gallery" className="py-20 bg-muted/30">
+        <div id="gallery" className="min-h-screen pb-4 scroll-mt-28">
+      <section className="py-12 bg-muted/30">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16 animate-fade-in-up">
-            <span className="px-4 py-2 bg-secondary/10 text-secondary rounded-full text-sm font-semibold inline-block mb-4">
-              Our Impact
-            </span>
-            <h2 className="text-3xl md:text-4xl font-bold text-navy mb-4">
+            <h2 className="text-3xl md:text-5xl font-bold text-navy mb-4">
               Gallery
             </h2>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
@@ -118,12 +109,12 @@ const Gallery = () => {
                     alt={image.caption}
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-navy/80 via-navy/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
+                  {/* <div className="absolute inset-0 bg-gradient-to-t from-navy/80 via-navy/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
                     <div className="absolute bottom-0 left-0 right-0 p-4 text-white">
                       <p className="font-semibold mb-1">{image.caption}</p>
                       <span className="text-xs bg-secondary px-2 py-1 rounded-full">{image.category}</span>
                     </div>
-                  </div>
+                  </div> */}
                 </div>
               </Card>
             ))}
@@ -158,6 +149,7 @@ const Gallery = () => {
           />
         </DialogContent>
       </Dialog>
+      </div>
     </>
   );
 };
