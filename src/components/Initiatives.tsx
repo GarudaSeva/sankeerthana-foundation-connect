@@ -53,11 +53,12 @@ const initiatives = [
 
 const Initiatives = () => {
   return (
-    <section className="container mx-auto px-4 py-20" id="initiatives">
+    <div id="goals" className="min-h-screen pb-4 scroll-mt-28">
+    <section  className="container mx-auto px-4 mt-16" >
       {/* Section Header */}
       <div className="text-center mb-16">
-        <h1 className="text-5xl font-bold text-secondary mb-4">
-          Our Initiatives
+        <h1 className="text-5xl font-bold text-navy mb-4">
+          Our Goals & Initiatives
         </h1>
         <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
           Address a wide range of global challenges to create sustainable change.
@@ -93,6 +94,7 @@ const Initiatives = () => {
         ))}
       </div>
     </section>
+    </div>
   );
 };
 

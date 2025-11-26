@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import logo from "@/assets/logo.png";
+import { Label } from "recharts";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -17,6 +18,7 @@ const Navbar = () => {
   const navItems = [
     { label: "Home", id: "home" },
     { label: "About", id: "about" },
+    { label: "Goals", id: "goals"},
     { label: "Services", id: "services" },
     { label: "Gallery", id: "gallery" },
     { label: "News", id: "news" },
@@ -31,7 +33,8 @@ const Navbar = () => {
           <div className="flex items-center gap-3 cursor-pointer" onClick={() => scrollToSection("home")}>
             <img src={logo} alt="Sankeerthana Foundation" className="h-14 w-auto" />
             <div>
-              <h1 className="text-2xl font-bold text-navy">Sankeerthana Foundations</h1>
+              <h1 className="text-2xl font-bold text-navy">Sankeerthana Foundations
+              </h1>
               <p className="text-xs text-muted-foreground">Caring Hands for living Hearts</p>
             </div>
           </div>
