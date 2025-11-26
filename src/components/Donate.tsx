@@ -90,7 +90,7 @@ const Donate = () => {
               </CardHeader>
               <CardContent>
                 <div className="space-y-2 text-sm">
-                  <p><strong>Account Name:</strong> Sankeerthana Foundation</p>
+                  <p><strong>Account Name:</strong> Sankeerthana Foundations</p>
                   <p><strong>Account Number:</strong> 101410021006374</p>
                   <p><strong>Bank:</strong> HDFC Bank LTD</p>
                   <p><strong>IFSC Code:</strong> HDFC0CTGCUB</p>

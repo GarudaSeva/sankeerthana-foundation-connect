@@ -3,7 +3,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { MapPin, Phone, Mail, Instagram } from "lucide-react";
+import { MapPin, Phone, Mail, Instagram, Facebook, Youtube } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import instagramQR from "@/assets/instagram-qr.png";
 
@@ -44,25 +44,29 @@ const Contact = () => {
 
 
   const contactInfo = [
-    {
-      icon: MapPin,
-      title: "Our Location",
-      content: "H.No 10-3-48/A/1, Kameswar Rao Colony, Lingojiguda, Saroor Nagar, Telangana - 500035",
-      link: "https://maps.google.com/?q=H.No+10-3-48/A/1+Kameswar+Rao+Colony+Lingojiguda+Saroor+Nagar+Telangana+500035"
-    },
-    {
-      icon: Phone,
-      title: "Call Us",
-      content: "President: 8106143737\nVice President: 8106243737",
+  {
+    icon: MapPin,
+    title: "Our Location",
+    content: "H.No 10-3-48/A/1, Kameswar Rao Colony, Lingojiguda, Saroor Nagar, Telangana - 500035",
+    link: "https://maps.google.com/?q=H.No+10-3-48/A/1+Kameswar+Rao+Colony+Lingojiguda+Saroor+Nagar+Telangana+500035"
+  },
+  {
+    icon: Phone,
+    title: "Call Us",
+      content: "Official Number: 9959189407\nPresident: 8106143737\nVice President: 8106243737",
       link: "tel:8106143737"
-    },
-    {
-      icon: Instagram,
-      title: "Follow Us",
-      content: "@sankeerthanafoundations1",
-      link: "https://instagram.com/sankeerthanafoundations1"
-    }
-  ];
+  },
+  {
+    title: "Follow Us",
+    socials: [
+      { icon: Instagram, link: "https://instagram.com/sankeerthanafoundations1" },
+      { icon: Facebook, link: "https://facebook.com/sankeerthanafoundation" },
+      { icon: Youtube, link: "https://youtube.com/@sankeerthanafoundation" }
+    ]
+  }
+];
+
+
 
   return (
             <div id="contact" className="min-h-screen pb-4 scroll-mt-28">
@@ -151,26 +155,50 @@ const Contact = () => {
 
           {/* Contact Information */}
           <div className="space-y-6">
-            {contactInfo.map((info, index) => (
-              <Card key={index} className="border-border hover:shadow-card transition-all group">
-                <CardContent className="p-6">
-                  <a 
-                    href={info.link} 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="flex gap-4"
-                  >
-                    <div className="w-12 h-12 bg-secondary/10 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:bg-secondary/20 transition-colors">
-                      <info.icon className="h-6 w-6 text-secondary" />
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-navy mb-2">{info.title}</h4>
-                      <p className="text-muted-foreground whitespace-pre-line">{info.content}</p>
-                    </div>
-                  </a>
-                </CardContent>
-              </Card>
-            ))}
+         {contactInfo.map((info, index) => (
+  <Card key={index} className="border-border hover:shadow-card transition-all group">
+    <CardContent className="p-6">
+      <div className="flex gap-4">
+
+        {/* Show icon only for first 2 cards */}
+        {info.icon && (
+          <div className="w-12 h-12 bg-secondary/10 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:bg-secondary/20 transition-colors">
+            <info.icon className="h-6 w-6 text-secondary" />
+          </div>
+        )}
+
+        <div className="flex-1">
+          <h4 className="font-semibold text-navy mb-2">{info.title}</h4>
+
+          {/* Show content only for cards that have content */}
+          {info.content && (
+            <p className="text-muted-foreground whitespace-pre-line">{info.content}</p>
+          )}
+
+          {/* Social icons only below Follow Us title */}
+          {info.socials && (
+            <div className="flex gap-4 mt-3">
+              {info.socials.map((social, i) => (
+                <a
+                  key={i}
+                  href={social.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-2 rounded-full bg-secondary/10 hover:bg-secondary/20 transition-colors"
+                >
+                  <social.icon className="w-5 h-5 text-secondary" />
+                </a>
+              ))}
+            </div>
+          )}
+        </div>
+
+      </div>
+    </CardContent>
+  </Card>
+))}
+
+
 
           
 

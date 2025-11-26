@@ -8,6 +8,7 @@ import Team from "@/components/Team";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import Donate from "@/components/Donate";
+import Initiatives from "@/components/Initiatives";
 
 const Index = () => {
   return (
@@ -16,6 +17,7 @@ const Index = () => {
       <main>
         <Hero />
         <About />
+        <Initiatives/>
         <Services />
         <Gallery />
         <News />

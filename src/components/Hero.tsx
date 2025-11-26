@@ -19,10 +19,17 @@ const Hero = () => {
 
       <div className="container mx-auto px-4 py-20">
 
-        {/* MAIN TITLE */}
-        <h1 className="text-center text-5xl md:text-7xl font-extrabold text-secondary mb-6 uppercase">
-          SANKEERTHANA FOUNDATION
-        </h1>
+        <div className="w-full flex justify-center mb-2 relative">
+  <div className="inline-block relative mb-4">
+    <h1 className="text-center text-5xl md:text-7xl font-extrabold text-secondary uppercase">
+      SANKEERTHANA FOUNDATIONS
+    </h1>
+
+    <span className="absolute right-0 top-full text-sm font-semibold text-primary">
+      Reg: 470 of 2021
+    </span>
+  </div>
+</div>
 
         {/* CENTER BADGE */}
         <div className="w-full flex justify-center mb-16">
@@ -41,7 +48,7 @@ const Hero = () => {
             </h1>
 
             <p className="text-lg text-muted-foreground max-w-xl">
-              Sankeerthana Foundation is dedicated to providing education,
+              Sankeerthana Foundations is dedicated to providing education,
               healthcare, and dignity to senior citizens and children across
               Telangana. Together, we're building a better tomorrow.
             </p>
