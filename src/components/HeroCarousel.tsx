@@ -1,12 +1,13 @@
 import { useState, useEffect } from "react";
 
-import img1 from "@/assets/hero/Screenshot from 2025-11-27 17-33-13.png";
-import img2 from "@/assets/hero/Screenshot from 2025-11-27 17-34-05.png";
-import img3 from "@/assets/hero/Screenshot from 2025-11-27 17-34-33.png";
-import img4 from "@/assets/hero/Screenshot from 2025-11-27 17-35-35.png";
-import img5 from "@/assets/hero/Screenshot from 2025-11-27 17-36-08.png";
+import img1 from "@/assets/hero/Screenshot from 2025-11-27 17-33-13.webp";
+import img2 from "@/assets/hero/Screenshot from 2025-11-27 17-34-05.webp";
+import img3 from "@/assets/hero/Screenshot from 2025-11-27 17-34-33.webp";
+import img4 from "@/assets/hero/Screenshot from 2025-11-27 17-35-04.webp";
+import img5 from "@/assets/hero/Screenshot from 2025-11-27 17-35-35.webp";
+import img6 from "@/assets/hero/Screenshot from 2025-11-27 17-36-08.webp"
 
-const images = [img1, img4, img3, img2, img5];
+const images = [img1, img4, img3, img2, img5 , img6];
 
 const HeroCarousel = () => {
   const [current, setCurrent] = useState(0);
