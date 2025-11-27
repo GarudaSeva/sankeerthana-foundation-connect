@@ -6,7 +6,7 @@ import img3 from "@/assets/hero/Screenshot from 2025-11-27 17-34-33.png";
 import img4 from "@/assets/hero/Screenshot from 2025-11-27 17-35-35.png";
 import img5 from "@/assets/hero/Screenshot from 2025-11-27 17-36-08.png";
 
-const images = [img1, img2, img3, img4, img5];
+const images = [img1, img4, img3, img2, img5];
 
 const HeroCarousel = () => {
   const [current, setCurrent] = useState(0);

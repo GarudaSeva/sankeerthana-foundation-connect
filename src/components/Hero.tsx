@@ -18,38 +18,37 @@ const Hero = () => {
       {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-cream via-background to-muted -z-10" />
 
-      <div className="container mx-auto px-4 py-20">
-
+      <div className="container mx-auto px-4 py-24">
         <div className="w-full flex justify-center mb-2 relative">
-  <div className="inline-block relative mb-4">
-    <h1 className="text-center text-5xl md:text-7xl font-extrabold text-secondary uppercase">
-      SANKEERTHANA FOUNDATIONS
-    </h1>
+          <div className="inline-block relative mb-4">
+            <h1 className="text-center text-5xl md:text-7xl font-extrabold text-secondary uppercase">
+              SANKEERTHANA FOUNDATIONS
+            </h1>
 
-    <span className="absolute right-0 top-full text-sm font-semibold text-primary">
-      Reg: 470 of 2021
-    </span>
-  </div>
-</div>
+            <span className="absolute right-0 top-full text-sm font-semibold text-primary mt-4">
+              Reg: 470 of 2021
+            </span>
+          </div>
+        </div>
         {/* CENTER BADGE */}
-        <div className="w-full flex justify-center mb-4">
-          <span className="px-6 py-3 bg-secondary/10 text-navy rounded-full text-sm font-semibold">
+        <div className="w-full flex justify-center py-8">
+          <span className="px-6 py-3 bg-secondary/10 text-navy rounded-full text-md font-semibold">
             Making a Difference Since 2021
           </span>
         </div>
 
         <div className="mb-16 flex justify-center rounded-2xl">
-  <HeroCarousel />
-</div>
-
+          <HeroCarousel />
+        </div>
 
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* LEFT CONTENT */}
           <div className="space-y-8 animate-fade-in-up">
-
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-navy leading-tight">
               Empowering Lives Through
-              <span className="block text-secondary mt-2">Care & Education</span>
+              <span className="block text-secondary mt-2">
+                Care & Education
+              </span>
             </h1>
 
             <p className="text-lg text-muted-foreground max-w-xl">
@@ -91,9 +90,7 @@ const Hero = () => {
               </div>
               <div className="text-center">
                 <div className="text-3xl font-bold text-navy">50+</div>
-                <div className="text-sm text-muted-foreground">
-                  Volunteers
-                </div>
+                <div className="text-sm text-muted-foreground">Volunteers</div>
               </div>
             </div>
           </div>
