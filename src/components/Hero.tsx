@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Heart, Users, GraduationCap, HandHeart } from "lucide-react";
+import HeroCarousel from "./HeroCarousel";
 
 const Hero = () => {
   const scrollToSection = (id: string) => {
@@ -12,7 +13,7 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center pt-20 overflow-hidden"
+      className="relative min-h-screen flex items-center pt-10 overflow-hidden"
     >
       {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-cream via-background to-muted -z-10" />
@@ -30,13 +31,17 @@ const Hero = () => {
     </span>
   </div>
 </div>
-
         {/* CENTER BADGE */}
-        <div className="w-full flex justify-center mb-16">
+        <div className="w-full flex justify-center mb-4">
           <span className="px-6 py-3 bg-secondary/10 text-navy rounded-full text-sm font-semibold">
             Making a Difference Since 2021
           </span>
         </div>
+
+        <div className="mb-16 flex justify-center rounded-2xl">
+  <HeroCarousel />
+</div>
+
 
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* LEFT CONTENT */}
