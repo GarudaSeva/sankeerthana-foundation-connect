@@ -1,18 +1,40 @@
 import { Card, CardContent } from "@/components/ui/card";
-import { User, Phone } from "lucide-react";
+import { Phone } from "lucide-react";
+import image1 from "@/assets/team/Timpula Santhosh  kumar  (founder ).png";
+import image2 from "@/assets/team/megavath Anitha (Vice-prasient).png";
+import image3 from "@/assets/team/M.Mallesh (Genral sec).png";
+import image4 from "@/assets/team/Hanumanth .(Join secu).png";
+import image5 from "@/assets/team/K.Divya(truserer).png";
+import image6 from "@/assets/team/Saritha (Excutive member).png"
+import image7 from "@/assets/team/Divya Bharati (Exceutive member).png"
+import image8 from "@/assets/team/Saidulu (excutive member).png"
+import image9 from "@/assets/team/V.thirupath Nailk (legal advisor & Committe menmber).jpg"
 
 const Team = () => {
   const teamMembers = [
-    { name: "Timpula Santhosh Kumar", position: "President & Founder", phone: "8106143737", role: "primary" },
-    { name: "Megavath Anitha", position: "Vice President", phone: "8106243737", role: "primary" },
+    {
+      name: "Timpula Santhosh Kumar",
+      position: "President & Founder",
+      phone: "8106143737",
+      role: "primary",
+      image: image1,
+    },
+    {
+      name: "Megavath Anitha",
+      position: "Vice President",
+      phone: "8106243737",
+      role: "primary",
+      image: image2,
+    },
 
-    { name: "Medamoni Mallesh", position: "General Secretary", role: "executive" },
-    { name: "Daragoni Hanumanthu", position: "Joint Secretary", role: "executive" },
-    { name: "Kompelli Divya", position: "Treasurer", role: "executive" },
+    { name: "Medamoni Mallesh", position: "General Secretary", role: "executive", image: image3 },
+    { name: "Daragoni Hanumanthu", position: "Joint Secretary", role: "executive", image: image4 },
+    { name: "Kompelli Divya", position: "Treasurer", role: "executive", image: image5 },
 
-    { name: "Satitha Satyagama", position: "Executive Member", role: "member" },
-    { name: "Divya Bharathi Chenigala", position: "Executive Member", role: "member" },
-    { name: "Saidulu Bandela", position: "Member", role: "member" }
+    { name: "Saritha Satyagama", position: "Executive Member", role: "member", image: image6 },
+    { name: "Divya Bharathi Chenigala", position: "Executive Member", role: "member", image: image7 },
+    { name: "Saidulu Bandela", position: "Member", role: "member", image: image8 },
+    { name: "V. Thirupathi Naik", position: "Legal advisor & committee members" , role: "member" ,  image: image9}
   ];
 
   return (
@@ -22,9 +44,7 @@ const Team = () => {
 
           {/* SECTION TITLE */}
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-5xl font-bold text-navy mb-4">
-              Meet Our Team
-            </h2>
+            <h2 className="text-3xl md:text-5xl font-bold text-navy mb-4">Meet Our Team</h2>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
               Dedicated individuals committed to making a difference in society through service and compassion.
             </p>
@@ -38,8 +58,12 @@ const Team = () => {
                 className="bg-white rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 border border-gray-200"
               >
                 <CardContent className="p-8 text-center">
-                  <div className="w-24 h-24 rounded-full bg-secondary/10 flex items-center justify-center mx-auto mb-4 shadow-inner">
-                    <User className="h-12 w-12 text-secondary" />
+                  <div className="w-36 h-36 rounded-full overflow-hidden mx-auto mb-4 shadow-md">
+                    <img
+                      src={member.image}
+                      alt={member.name}
+                      className="w-full h-full object-cover"
+                    />
                   </div>
 
                   <h3 className="text-2xl font-bold text-navy mb-1">{member.name}</h3>
@@ -59,9 +83,7 @@ const Team = () => {
           </div>
 
           {/* EXECUTIVE COMMITTEE */}
-          <h3 className="text-2xl font-bold text-navy mb-6 text-center">
-            Executive Committee
-          </h3>
+          <h3 className="text-2xl font-bold text-navy mb-6 text-center">Executive Committee</h3>
 
           <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto mb-16">
             {teamMembers.filter(m => m.role === "executive").map((member, index) => (
@@ -70,8 +92,8 @@ const Team = () => {
                 className="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 border border-gray-200"
               >
                 <CardContent className="p-6 text-center">
-                  <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4 shadow-inner">
-                    <User className="h-8 w-8 text-primary" />
+                  <div className="w-28 h-28 rounded-full overflow-hidden mx-auto mb-4 shadow-md">
+                    <img src={member.image} alt={member.name} className="w-full h-full object-cover" />
                   </div>
 
                   <h4 className="text-lg font-semibold text-navy mb-1">{member.name}</h4>
@@ -84,15 +106,15 @@ const Team = () => {
           {/* MEMBERS */}
           <h3 className="text-2xl font-bold text-navy mb-6 text-center">Team Members</h3>
 
-          <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+          <div className="grid md:grid-cols-4 gap-6 max-w-5xl mx-auto">
             {teamMembers.filter(m => m.role === "member").map((member, index) => (
               <Card
                 key={index}
                 className="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 border border-gray-200"
               >
                 <CardContent className="p-6 text-center">
-                  <div className="w-14 h-14 rounded-full bg-secondary/10 flex items-center justify-center mx-auto mb-3 shadow-inner">
-                    <User className="h-7 w-7 text-secondary" />
+                  <div className="w-24 h-24 rounded-full overflow-hidden mx-auto mb-3 shadow-md">
+                    <img src={member.image} alt={member.name} className="w-full h-full object-cover" />
                   </div>
 
                   <h4 className="font-semibold text-navy mb-1">{member.name}</h4>
@@ -100,22 +122,6 @@ const Team = () => {
                 </CardContent>
               </Card>
             ))}
-          </div>
-
-          {/* CTA */}
-          <div className="mt-16 text-center">
-            <div className="inline-block bg-white rounded-xl p-8 border border-gray-200 shadow-xl max-w-2xl">
-              <h3 className="text-2xl font-bold text-navy mb-3">Join Our Team</h3>
-              <p className="text-muted-foreground mb-6">
-                We're always looking for passionate individuals who want to make a difference. Become a volunteer today.
-              </p>
-              <button
-                onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
-                className="bg-secondary hover:bg-secondary/90 text-white px-8 py-3 rounded-lg font-semibold shadow-lg hover:shadow-xl transition-all"
-              >
-                Volunteer With Us
-              </button>
-            </div>
           </div>
 
         </div>
