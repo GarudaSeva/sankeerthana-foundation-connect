@@ -1,7 +1,7 @@
 import { Heart, CreditCard, Building2, Smartphone, CheckCircle } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import qrCode from "@/assets/instagram-qr.png";
+import qrCode from "@/assets/scanner.jpg";
 
 const Donate = () => {
   const donationMethods = [
