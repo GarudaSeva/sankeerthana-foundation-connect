@@ -3,7 +3,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { MapPin, Phone, Mail, Instagram, Facebook, Youtube } from "lucide-react";
+import { MapPin, Phone, Mail, Instagram, Facebook, Youtube, Navigation } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import instagramQR from "@/assets/instagram-qr.png";
 
@@ -69,12 +69,12 @@ const Contact = () => {
 
 
   return (
-            <div id="contact" className="min-h-screen pb-4 scroll-mt-28">
+            <div id="contact" className="pb-4 scroll-mt-24">
 
     <section id="contact" className="py-8 bg-background">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16 animate-fade-in-up">
-          <h2 className="text-3xl md:text-4xl font-bold text-navy mb-4">
+        <div className="text-center mb-12 animate-fade-in-up">
+          <h2 className="text-3xl md:text-5xl font-bold text-navy mb-4">
             Contact Us
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
@@ -86,7 +86,7 @@ const Contact = () => {
           {/* Contact Form */}
           <Card className="border-border shadow-card">
             <CardContent className="p-8">
-              <h3 className="text-2xl font-bold text-navy mb-6">Send us a Message</h3>
+              {/* <h3 className="text-2xl font-bold text-navy mb-6">Send us a Message</h3> */}
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
                   <label className="block text-sm font-medium text-foreground mb-2">
@@ -199,24 +199,21 @@ const Contact = () => {
 ))}
 
 
+  <Button
+    size="lg"
+    className="bg-navy hover:bg-secondary/90 text-white px-8 py-3 rounded-xl shadow-lg hover:shadow-xl transition-all"
+    onClick={() =>
+      window.open(
+        "https://www.google.com/maps?q=H.No+10-3-48%2FA%2F1+Kameswar+Rao+Colony+Lingojiguda+Saroor+Nagar+Telangana+500035",
+        "_blank"
+      )
+    }
+  >
+    <Navigation className="w-5 h-5 mr-2" />
+    Get Location
+  </Button>
 
           
-
-            {/* Map */}
-            <Card className="border-border overflow-hidden">
-              <CardContent className="p-0">
-                <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3808.1234567890!2d78.5!3d17.35!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTfCsDIxJzAwLjAiTiA3OMKwMzAnMDAuMCJF!5e0!3m2!1sen!2sin!4v1234567890"
-                  width="100%"
-                  height="300"
-                  style={{ border: 0 }}
-                  allowFullScreen
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                  title="Sankeerthana Foundation Location"
-                />
-              </CardContent>
-            </Card>
           </div>
         </div>
       </div>

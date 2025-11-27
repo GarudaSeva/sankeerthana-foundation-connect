@@ -1,7 +1,7 @@
 import { CheckCircle, Target, Award } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import volunteersImage from "@/assets/mission.png";
-import missionImg from "@/assets/gallery/image10.jpeg";
+import missionImg from "@/assets/visions.png";
 import valuesImg from "@/assets/values.png";
 
 const About = () => {

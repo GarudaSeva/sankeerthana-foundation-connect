@@ -1,156 +1,152 @@
 import { useState } from "react";
-import { Dialog, DialogContent } from "@/components/ui/dialog";
-import { Card } from "@/components/ui/card";
-import image1 from "@/assets/gallery/image1.jpeg"
-import image2 from "@/assets/gallery/image2.jpeg"
-import image3 from "@/assets/gallery/image3.jpeg"
-import image4 from "@/assets/gallery/image4.jpeg"
-import image5 from "@/assets/gallery/image5.jpeg"
-import image6 from "@/assets/gallery/image6.jpeg"
-import image7 from "@/assets/gallery/image7.jpeg"
-import image8 from "@/assets/gallery/image8.jpeg"
-import image9 from "@/assets/gallery/image9.jpeg"
-import image10 from "@/assets/gallery/image10.jpeg"
-import image11 from "@/assets/gallery/image11.jpeg"
-import image12 from "@/assets/gallery/image12.jpeg"
 
- 
+// Import all images
+import image1 from "@/assets/gallery1/donation1.jpg";
+import image2 from "@/assets/gallery1/image.png";
+import image3 from "@/assets/gallery1/donations3.jpg";
+import image4 from "@/assets/gallery1/donations4.jpg";
+import image5 from "@/assets/gallery1/service.jpg";
+import image6 from "@/assets/gallery1/service1.jpg";
+import image7 from "@/assets/gallery1/service3.jpg";
+import image8 from "@/assets/gallery1/service4.jpg";
+import image9 from "@/assets/gallery1/service6.jpg";
+import image10 from "@/assets/gallery1/service8.jpg";
+import image11 from "@/assets/gallery1/blanket-deonations.jpg";
+import image12 from "@/assets/gallery1/blanket-donation3.jpg";
+import image13 from "@/assets/gallery1/blanketdonation2.jpg";
+import image14 from "@/assets/gallery1/food donations.jpg";
+import image15 from "@/assets/gallery1/food-donation7.jpg";
+import image16 from "@/assets/gallery1/food.jpg";
+import image17 from "@/assets/gallery1/fruit-distrubtions.jpg";
+
+import image18 from "@/assets/news/calender.jpeg";
+import image19 from "@/assets/news/andula support.jpeg";
+import image20 from "@/assets/news/diwyanga.jpeg"
+import { Instagram } from "lucide-react";
+
+interface GalleryItem {
+  src: string;
+  caption: string;
+  category: string;
+}
+
 const Gallery = () => {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const [activeCategory, setActiveCategory] = useState("All");
 
-  // Images from the parsed PDF
-  const galleryImages = [
-    {
-      src: image1,
-      caption: "Blanket Distribution - Old Age Home",
-      category: "Community Service"
-    },
-    {
-      src: image2,
-      caption: "Supporting Senior Citizens",
-      category: "Elder Care"
-    },
-    {
-      src: image3,
-      caption: "Blanket Donation Drive",
-      category: "Winter Relief"
-    },
-    {
-      src: image4,
-      caption: "Community Outreach",
-      category: "Community Service"
-    },
-    {
-      src: image5,
-      caption: "Helping Hands in Action",
-      category: "Volunteering"
-    },
-    {
-      src: image6,
-      caption: "COVID Relief - Food Distribution",
-      category: "Food Drive"
-    },
-    {
-      src: image7,
-      caption: "Hospital Food Support",
-      category: "Healthcare Support"
-    },
-    {
-      src: image8,
-      caption: "Feeding the Needy",
-      category: "Food Drive"
-    },
-    {
-      src: image9,
-      caption: "Street Food Distribution",
-      category: "Community Service"
-    },
-    {
-      src: image10,
-      caption: "School Bags Distribution",
-      category: "Education"
-    },
-    {
-      src: image11,
-      caption: "Girls School Support",
-      category: "Education"
-    },
-    {
-      src: image12,
-      caption: "Educational Kit Distribution",
-      category: "Education"
-    }
+  const categories = ["All", "Donations", "Services", "News"];
+
+  const galleryImages: GalleryItem[] = [
+    { src: image1, caption: "Money Donation", category: "Donations" },
+    { src: image2, caption: "Food Donation", category: "Donations" },
+    { src: image3, caption: "School Children Donate Money", category: "Donations" },
+    { src: image4, caption: "School Chindren Donate Money", category: "Donations" },
+    { src: image5, caption: "Helping Hands", category: "Services" },
+    { src: image6, caption: "Motivate Students to Donate", category: "Services" },
+    { src: image7, caption: "Donate Water Dispenser", category: "Services" },
+    { src: image8, caption: "Donate Water Dispenser", category: "Services" },
+    { src: image9, caption: "Handicapped children birthday celebration", category: "Services" },
+    { src: image10, caption: "Vacational Training in Handicapped schools", category: "Services" },
+
+
+    { src: image11, caption: "Blanket Donations", category: "Donations" },
+    { src: image12, caption: "Blanket Donations", category: "Donations" },
+    { src: image13, caption: "Blanket Donations", category: "Donations" },
+
+    { src: image14, caption: "Street Food Distribution", category: "Services" },
+    { src: image15, caption: "Food Distribution in Hospitals", category: "Services" },
+    { src: image16, caption: "Food Distribution", category: "Donations" },
+    { src: image17, caption: "Fruit Distribution", category: "Donations" },
+
+    { src: image18, caption: "Calender Launch", category: "News" },
+    { src: image19, caption: "Government support Handicapped people", category: "News" },
+    { src: image20, caption: "Government Support Handicapped People", category: "News" },
+
   ];
 
+  const filteredImages =
+  activeCategory === "All"
+    ? [...galleryImages].sort(() => Math.random() - 0.5).slice(0, 9)
+    : galleryImages.filter((img) => img.category === activeCategory).slice(0, 9);
+
   return (
-    <>
-        <div id="gallery" className="min-h-screen pb-4 scroll-mt-28">
-      <section className="py-12 bg-muted/30">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16 animate-fade-in-up">
-            <h2 className="text-3xl md:text-5xl font-bold text-navy mb-4">
-              Gallery
-            </h2>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-              Witness the impact of our work through these moments captured during our various programs and initiatives across Telangana.
-            </p>
-          </div>
+    <section id="gallery" className="py-12 scroll-mt-28">
+  <div className="mx-auto px-1 max-w-[1400px]">   {/* Wider container & minimal side padding */}
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {galleryImages.map((image, index) => (
-              <Card 
-                key={index}
-                className="group cursor-pointer overflow-hidden hover:shadow-elegant transition-all border-border"
-                onClick={() => setSelectedImage(image.src)}
-              >
-                <div className="relative aspect-square overflow-hidden">
-                  <img 
-                    src={image.src} 
-                    alt={image.caption}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                  />
-                  {/* <div className="absolute inset-0 bg-gradient-to-t from-navy/80 via-navy/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
-                    <div className="absolute bottom-0 left-0 right-0 p-4 text-white">
-                      <p className="font-semibold mb-1">{image.caption}</p>
-                      <span className="text-xs bg-secondary px-2 py-1 rounded-full">{image.category}</span>
-                    </div>
-                  </div> */}
-                </div>
-              </Card>
-            ))}
-          </div>
+    {/* Title */}
+    <div className="text-center mb-6">
+      <h2 className="text-4xl md:text-5xl font-bold text-navy mb-2">
+        Gallery
+      </h2>
+      <p className="text-muted-foreground text-md max-w-2xl mx-auto">
+        Explore our activities and captured moments
+      </p>
+    </div>
 
-          <div className="text-center mt-12">
-            <p className="text-muted-foreground mb-4">
-              Follow us on Instagram for more updates and stories
-            </p>
-            <a 
-              href="https://instagram.com/sankeerthanafoundations1" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-secondary hover:text-secondary/80 font-semibold transition-colors"
-            >
-              <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-              </svg>
-              @sankeerthanafoundations1
-            </a>
-          </div>
-        </div>
-      </section>
+    {/* Category Tabs */}
+    <div className="flex flex-wrap justify-center gap-3 mb-8">
+      {categories.map((cat) => (
+        <button
+          key={cat}
+          onClick={() => setActiveCategory(cat)}
+          className={`px-5 py-1.5 rounded-full text-lg font-medium transition-all ${
+            activeCategory === cat
+              ? "bg-secondary text-white shadow"
+              : "bg-muted text-muted-foreground hover:bg-muted/70"
+          }`}
+        >
+          {cat}
+        </button>
+      ))}
+    </div>
 
-      {/* Image Modal */}
-      <Dialog open={!!selectedImage} onOpenChange={() => setSelectedImage(null)}>
-        <DialogContent className="max-w-4xl p-0">
-          <img 
-            src={selectedImage || ""} 
-            alt="Gallery" 
-            className="w-full h-auto rounded-lg"
-          />
-        </DialogContent>
-      </Dialog>
-      </div>
-    </>
+    {/* Gallery Grid */}
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 w-full">
+      {filteredImages.map((image, index) => (
+        <div
+  key={index}
+  onClick={() => setSelectedImage(image.src)}
+  className="group relative h-56 rounded-xl overflow-hidden bg-muted shadow-sm hover:shadow-xl cursor-pointer transition-all"
+>
+  <img
+    src={image.src}
+    alt={image.caption}
+    className="w-full h-full object-cover transition-all duration-500 group-hover:brightness-75 group-hover:scale-105"
+  />
+
+  <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+  
+  <div className="absolute bottom-0 left-0 right-0 p-2 translate-y-full opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all">
+    <p className="text-white text-xs text-center font-medium">
+      {image.caption}
+    </p>
+  </div>
+</div>
+
+      ))}
+    </div>
+
+    {/* Instagram CTA */}
+    <div className="text-center mt-12 flex flex-col items-center">
+  <p className="text-navy text-2xl md:text-2xl font-extrabold mb-3">
+    See more on Instagram
+  </p>
+
+  <a
+    href="https://instagram.com/sankeerthanafoundations1"
+    target="_blank"
+    className="flex items-center gap-3 b"
+  >
+    <Instagram className="w-8 h-8 text-secondary" />
+
+    <span className="text-secondary font-bold text-2xl md:text-3xl">
+      @sankeerthanafoundations1
+    </span>
+  </a>
+</div>
+  </div>
+</section>
+
   );
 };
 
