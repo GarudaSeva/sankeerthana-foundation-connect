@@ -17,26 +17,28 @@ const Contact = () => {
   });
 
  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
+  e.preventDefault();
 
-    // ✅ Directly send to WhatsApp
-    const message = encodeURIComponent(
-        `Name: ${formData.name}\n` +
-        `Email: ${formData.email}\n` +
-        `Phone: ${formData.phone}\n` +
-        `Message: ${formData.message}`
-    );
+  const cleanPhone = formData.phone.replace(/\D/g, ""); // remove non digits
 
-    const whatsappUrl = `https://wa.me/919959189407?text=${message}`;
-    window.open(whatsappUrl, "_blank");
+  const message = encodeURIComponent(
+    `Name: ${formData.name}\n` +
+    `Email: ${formData.email}\n` +
+    `Phone: ${cleanPhone}\n` +
+    `Message: ${formData.message}`
+  );
 
-toast({
+  const whatsappUrl = `https://wa.me/918106143737?text=${message}`;
+  window.open(whatsappUrl, "_blank");
+
+  toast({
     title: "Opening WhatsApp...",
     description: "Your message will be sent through WhatsApp.",
   });
-  
+
   setFormData({ name: "", email: "", phone: "", message: "" });
-  };
+};
+
 
 
 

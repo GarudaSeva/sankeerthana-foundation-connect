@@ -19,26 +19,23 @@ const Contact = () => {
   const handleSubmit = (e: React.FormEvent) => {
   e.preventDefault();
 
-  const whatsappNumber = "9959189407";
-  const whatsappMessage = 
-    `Name: ${formData.name}%0A` +
-    `Email: ${formData.email}%0A` +
-    `Phone: ${formData.phone || "N/A"}%0A` +
-    `Message: ${formData.message}`;
+  const cleanPhone = formData.phone.replace(/\D/g, ""); // remove non digits
 
-  // WhatsApp deep link
-  const whatsappURL = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
+  const message = encodeURIComponent(
+    `Name: ${formData.name}\n` +
+    `Email: ${formData.email}\n` +
+    `Phone: ${cleanPhone}\n` +
+    `Message: ${formData.message}`
+  );
 
-  // Open WhatsApp
-  window.open(whatsappURL, "_blank");
+  const whatsappUrl = `https://wa.me/918106143737?text=${message}`;
+  window.open(whatsappUrl, "_blank");
 
-  // Optional Toast
   toast({
     title: "Opening WhatsApp...",
     description: "Your message will be sent through WhatsApp.",
   });
 
-  // Reset form
   setFormData({ name: "", email: "", phone: "", message: "" });
 };
 
