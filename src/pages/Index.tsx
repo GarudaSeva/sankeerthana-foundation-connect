@@ -23,7 +23,7 @@ const Index = () => {
         <News />
         {/* <Team /> */}
         <Donate/>
-        <Contact />
+        {/* <Contact /> */}
       </main>
     </div>
   );
