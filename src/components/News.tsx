@@ -57,7 +57,7 @@ const News = () => {
   const current = newsArticles[currentIndex];
 
   return (
-    <section id="news" className="py-12 scroll-mt-28 bg-background">
+    <section  className="py-8 scroll-mt-28 bg-background">
       <div className="mx-auto px-2 max-w-[1200px]">
         {" "}
         {/* more width & less padding */}

@@ -71,10 +71,10 @@ const Gallery = () => {
 
   return (
     <section  className="py-12 scroll-mt-28">
-  <div className="mx-auto px-1 max-w-[1400px]">   {/* Wider container & minimal side padding */}
+<div className="mx-auto px-1 max-w-[1400px] pt-20 mb-12">   {/* Wider container & minimal side padding */}
 
     {/* Title */}
-    <div className="text-center mb-6">
+    <div className="text-center mb-6 animate-fade-in-up">
       <h2 className="text-4xl md:text-5xl font-bold text-navy mb-2">
         Gallery
       </h2>

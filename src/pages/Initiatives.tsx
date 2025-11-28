@@ -53,10 +53,10 @@ const initiatives = [
 
 const Initiatives = () => {
   return (
-    <div  className="min-h-screen pb-4 scroll-mt-28">
-    <section  className="container mx-auto px-4 mt-16" >
+    <div className="min-h-screen pb-4 scroll-mt-28">
+    <section  className="container mx-auto px-4 mt-28" >
       {/* Section Header */}
-      <div className="text-center mb-16">
+      <div className="text-center mb-16 animate-fade-in-up">
         <h1 className="text-5xl font-bold text-navy mb-4">
           Our Goals & Initiatives
         </h1>

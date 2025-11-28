@@ -16,28 +16,31 @@ const Contact = () => {
     message: ""
   });
 
- const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
+  const handleSubmit = (e: React.FormEvent) => {
+  e.preventDefault();
 
-    // ✅ Directly send to WhatsApp
-    const message = encodeURIComponent(
-        `Name: ${formData.name}\n` +
-        `Email: ${formData.email}\n` +
-        `Phone: ${formData.phone}\n` +
-        `Message: ${formData.message}`
-    );
+  const whatsappNumber = "9959189407";
+  const whatsappMessage = 
+    `Name: ${formData.name}%0A` +
+    `Email: ${formData.email}%0A` +
+    `Phone: ${formData.phone || "N/A"}%0A` +
+    `Message: ${formData.message}`;
 
-    const whatsappUrl = `https://wa.me/919959189407?text=${message}`;
-    window.open(whatsappUrl, "_blank");
+  // WhatsApp deep link
+  const whatsappURL = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
 
-toast({
+  // Open WhatsApp
+  window.open(whatsappURL, "_blank");
+
+  // Optional Toast
+  toast({
     title: "Opening WhatsApp...",
     description: "Your message will be sent through WhatsApp.",
   });
-  
-  setFormData({ name: "", email: "", phone: "", message: "" });
-  };
 
+  // Reset form
+  setFormData({ name: "", email: "", phone: "", message: "" });
+};
 
 
   const contactInfo = [
@@ -66,8 +69,9 @@ toast({
 
 
   return (
-    <div  className="pb-4 scroll-mt-24">
-    <section  className="mb-12 bg-background">
+            <div  className="pb-0 scroll-mt-24">
+
+    <section className="bg-background pt-28 pb-8">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12 animate-fade-in-up">
           <h2 className="text-3xl md:text-5xl font-bold text-navy mb-4">

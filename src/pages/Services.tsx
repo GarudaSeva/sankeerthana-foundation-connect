@@ -22,7 +22,7 @@ const Services = () => {
 
   return (
     <div  className="min-h-screen pb-4 scroll-mt-28">
-      <section className="py-4 bg-background">
+      <section className="py-12 bg-background pt-28 mb-8">
         <div className="container mx-auto px-4">
 
           {/* Title */}

@@ -25,7 +25,6 @@ const Index = () => {
         <Donate/>
         <Contact />
       </main>
-      <Footer />
     </div>
   );
 };

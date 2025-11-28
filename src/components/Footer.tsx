@@ -1,12 +1,33 @@
 import logo from "@/assets/logo.png";
 import { Instagram, Phone, MapPin, Facebook, Youtube } from "lucide-react";
+import { useNavigate, useLocation } from "react-router-dom";
 
 const Footer = () => {
-  const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const navItems = [
+    { label: "Home", path: "/" },
+    { label: "About", path: "/about" },
+    { label: "Goals", path: "/goals" },
+    { label: "Services", path: "/services" },
+    { label: "Gallery", path: "/gallery" },
+    { label: "Team", path: "/team" },
+    { label: "Contact", path: "/contact" },
+  ];
+
+  const handleFooterNav = (path: string) => {
+    // If user clicks Home while already on Home → Scroll to top smoothly
+    if (path === "/" && location.pathname === "/") {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      return;
     }
+
+    // For any other navigation
+    navigate(path);
+    setTimeout(() => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }, 200);
   };
 
   return (
@@ -61,13 +82,13 @@ const Footer = () => {
           <div>
             <h4 className="font-semibold text-lg mb-4">Quick Links</h4>
             <ul className="space-y-2">
-              {["Home", "About", "Goals", "Services", "Gallery", "Team", "Contact"].map((item) => (
-                <li key={item}>
+              {navItems.map((item) => (
+                <li key={item.path}>
                   <button
-                    onClick={() => scrollToSection(item.toLowerCase())}
+                    onClick={() => handleFooterNav(item.path)}
                     className="text-white/70 hover:text-secondary transition-colors text-sm"
                   >
-                    {item}
+                    {item.label}
                   </button>
                 </li>
               ))}

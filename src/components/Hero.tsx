@@ -12,7 +12,6 @@ const Hero = () => {
 
   return (
     <section
-      id="home"
       className="relative min-h-screen flex items-center pt-10 overflow-hidden"
     >
       {/* Background gradient */}

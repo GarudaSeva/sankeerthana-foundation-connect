@@ -54,11 +54,11 @@ const About = () => {
   ];
 
   return (
-    <div  className="min-h-screen pb-4 scroll-mt-28">
-      <div className="container mx-auto px-4">
+    <div className="min-h-screen pb-4 scroll-mt-28">
+      <div className="container mx-auto px-4 pt-28 mb-20">
 
         {/* Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-16 animate-fade-in-up">
           <h1 className="text-5xl font-bold text-primary mb-4 animate-fade-in">
             About Us
           </h1>
@@ -132,7 +132,7 @@ const About = () => {
         </section>
 
         {/* Declaration Section */}
-        <section className="mt-12">
+        <section className="mt-20">
           <Card className="bg-primary/10">
             <CardHeader>
               <div className="flex items-center gap-2">
