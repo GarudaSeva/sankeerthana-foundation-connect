@@ -27,7 +27,8 @@ const Donate = () => {
 
 
   return (
-    <div className="min-h-screen pt-12 pb-12">
+    <div id="donate" className="min-h-screen pb-4 scroll-mt-28">
+    <div id="donate" className="min-h-screen pt-8 pb-12">
       <div className="container mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-16">
@@ -101,6 +102,7 @@ const Donate = () => {
         </div>
 
       </div>
+    </div>
     </div>
   );
 };

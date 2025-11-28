@@ -49,7 +49,7 @@ const Navbar = () => {
                 {item.label}
               </button>
             ))}
-            <Button variant="default" className="bg-secondary hover:bg-secondary/90" onClick={() => scrollToSection("contact")}>
+            <Button variant="default" className="bg-secondary hover:bg-secondary/90" onClick={() => scrollToSection("donate")}>
               Donate Now
             </Button>
           </div>
@@ -76,7 +76,7 @@ const Navbar = () => {
               </button>
             ))}
             <div className="px-4 pt-2">
-              <Button variant="default" className="w-full bg-secondary hover:bg-secondary/90" onClick={() => scrollToSection("contact")}>
+              <Button variant="default" className="w-full bg-secondary hover:bg-secondary/90" onClick={() => scrollToSection("donate")}>
                 Donate Now
               </Button>
             </div>
